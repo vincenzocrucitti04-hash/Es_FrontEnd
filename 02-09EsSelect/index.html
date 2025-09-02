@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List</title>
+    <meta name="description" content="Form di contatto">
+</head>
+<h1>Contact List</h1>
+<body>
+    <form action="mailto:vincenzo@gmail.com">
+    <label for="Name">Inserisci il tuo Nome</label>
+    <input type="text" name="name" required placeholder="Nome"> <br> <br>
+    <label for="email">Inserisci la tua Email</label>
+    <input type="email" name="email" required placeholder="Email"> <br> <br>
+    <label for="tel">Inserisci un recapito telefonico</label>
+    <input type="tel" name="phone" required placeholder="Tel/Cel"> <br> <br>
+    <label for="textarea">C'è qualcosa che vuoi dirci di te?</label>
+    <textarea name="textarea" placeholder="Scrivi qui" id=""></textarea><br> <br>
+    <label for="Paese">Seleziona il tuo Paese</label>
+    <select name="Paese" id="Paese" required>
+        <optgroup>
+            <option value="" disabled selected hidden>Seleziona il tuo Paese</option>
+        </optgroup>
+        <optgroup label="Europa">
+            <option value="Italia">Italia</option>
+            <option value="Francia">Francia</option>
+            <option value="Spagna">Spagna</option>
+            <option value="Germania">Germania</option>
+        </optgroup>
+        <optgroup label="America">
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="Messico">Messico</option>
+            <option value="Brasile">Brasile</option>
+        </optgroup>
+        <optgroup label="Asia">
+            <option value="Cina">Cina</option>
+            <option value="Giappone">Giappone</option>
+            <option value="India">India</option>
+            <option value="Corea del Sud">Corea del Sud</option>
+        </optgroup>
+        <optgroup label="Africa">
+            <option value="Sudafrica">Sudafrica</option>
+            <option value="Egitto">Egitto</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Kenya">Kenya</option>
+        <optgroup>
+    </select> <br> <br>
+    <input type="submit" value="Premi qui per inviare il form">
+    </form>    
+</body>
+</html
