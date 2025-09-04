@@ -2,4 +2,88 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3ab795;
+  padding: 20px;
+}
+header img {
+  width: 150px;
+  height: auto;
+  gap: 20rem;
+}
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+header nav a:hover {
+  color: #a0e8af;
+}
+header div {
+  display: flex;
+  align-items: center;
+}
+main {
+  padding: 40px;
+}
+main h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+main p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+main button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #86baa1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+main button:hover {
+  background-color: #a0e8af;
+}
+
+#welcome {
+  align-content: center;
+  margin-bottom: 40px;
+}
+
+#servizi-section {
+  display: flex;
+  align-items: left;
+  margin-top: 40px;
+}
+
+footer {
+  background-color: #3ab795;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+footer a:hover {
+  text-decoration: underline;
 }
