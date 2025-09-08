@@ -55,14 +55,16 @@ main button:hover {
   background-color: #a0e8af;
 }
 
-#welcome {
-  align-content: center;
-  margin-bottom: 40px;
+.intro {
+  text-align: center;
+  margin: 0 auto;
 }
 
-#servizi-section {
+.containerservizi {
   display: flex;
-  align-items: left;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
   margin-top: 40px;
 }
 
