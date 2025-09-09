@@ -1,39 +1,27 @@
-// Operazione Divisione
+function calcola(operazione) {
+  // 2. Prende i valori inseriri dall'utente
+  const n1 = Number(document.getElementById("n1").value);
+  const n2 = Number(document.getElementById("n2").value);
 
-function sot() {
-  let n1 = Number(document.getElementById("n1").value);
-  let n2 = Number(document.getElementById("n2").value);
-  let sot = n1 - n2;
+  let risultato;
 
-  document.getElementById("risultato").textContent = "Il risultato è: " + sot;
-}
+  // 3. Uso SWITCH invece di funzioni separate
+  switch (operazione) {
+    case "+":
+      risultato = n1 + n2;
+      break;
+    case "-":
+      risultato = n1 - n2;
+      break;
+    case "*":
+      risultato = n1 * n2;
+      break;
+    case "/":
+      risultato = n1 / n2;
+      break;
+  }
 
-// Operazione Somma
-
-function som() {
-  let n1 = Number(document.getElementById("n1").value);
-  let n2 = Number(document.getElementById("n2").value);
-  let som = n1 + n2;
-
-  document.getElementById("risultato").textContent = "Il risultato è: " + som;
-}
-
-// Operazione Moltiplicazione
-
-function mol() {
-  let n1 = Number(document.getElementById("n1").value);
-  let n2 = Number(document.getElementById("n2").value);
-  let mol = n1 * n2;
-
-  document.getElementById("risultato").textContent = "Il risultato è: " + mol;
-}
-
-// Operazione Divisione
-
-function div() {
-  let n1 = Number(document.getElementById("n1").value);
-  let n2 = Number(document.getElementById("n2").value);
-  let div = n1 / n2;
-
-  document.getElementById("risultato").textContent = "Il risultato è: " + div;
+  // 4. Mostra il risultato
+  document.getElementById("risultato").textContent =
+    "Il risultato è: " + risultato;
 }
