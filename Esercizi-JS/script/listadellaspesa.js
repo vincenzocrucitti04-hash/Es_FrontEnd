@@ -37,6 +37,8 @@ function addItem() {
     inputCategoria.value = ""; // Svuoto il campo categoria
 
     console.log("Array aggiornato:", shoppingItems); // Mostro l'array nella console
+  } else {
+    alert("Compila i campi correttamente! Grazie.");
   }
 }
 
