@@ -6,11 +6,19 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Lista della Spesa</h1>
+    <h2>Lista della spesa</h2>
 
-    <input type="text" id="itemInput" placeholder="Inserisci prodotto" />
+    <input type="text" id="prodotto" placeholder="Inserisci prodotto" />
+    <input type="text" id="quantita" placeholder="Inserisci quantità" />
+
+    <select name="categoria" id="categoria" required>
+      <option value="" disabled selected hidden>Seleziona una categoria</option>
+      <option value="Frutta">Frutta</option>
+      <option value="Verdura">Verdura</option>
+      <option value="Pasta">Pasta</option>
+    </select>
+
     <button onclick="addItem()">Aggiungi</button>
-
     <ul id="shoppingList"></ul>
 
     <script src="../script/listadellaspesa.js"></script>
