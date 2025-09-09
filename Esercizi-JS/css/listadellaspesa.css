@@ -1,0 +1,100 @@
+/* Reset e font base */
+body {
+  display: flex;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  justify-content: center;
+}
+
+/* Titolo principale */
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Contenitore per i campi di input */
+input,
+select,
+button {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Input di testo */
+input[type="text"] {
+  width: 180px;
+}
+
+/* Select */
+select {
+  width: 200px;
+}
+
+/* Pulsante aggiungi */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Lista */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Elementi della lista */
+li {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 15px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+/* Testo dell'elemento */
+li span {
+  flex-grow: 1;
+}
+
+/* ID piccolo */
+li small {
+  color: #666;
+  font-size: 11px;
+}
+
+/* Pulsante rimuovi */
+li button {
+  background-color: #dc3545;
+  padding: 6px 12px;
+  font-size: 12px;
+  margin: 0;
+}
+
+li button:hover {
+  background-color: #c82333;
+}

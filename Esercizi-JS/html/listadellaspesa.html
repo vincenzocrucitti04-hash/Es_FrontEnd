@@ -4,22 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../css/listadellaspesa.css" />
   </head>
   <body>
-    <h2>Lista della spesa</h2>
+    <div>
+      <h2>Lista della spesa</h2>
 
-    <input type="text" id="prodotto" placeholder="Inserisci prodotto" />
-    <input type="text" id="quantita" placeholder="Inserisci quantità" />
+      <input type="text" id="prodotto" placeholder="Inserisci prodotto" />
+      <input type="text" id="quantita" placeholder="Inserisci quantità" />
 
-    <select name="categoria" id="categoria" required>
-      <option value="" disabled selected hidden>Seleziona una categoria</option>
-      <option value="Frutta">Frutta</option>
-      <option value="Verdura">Verdura</option>
-      <option value="Pasta">Pasta</option>
-    </select>
+      <select name="categoria" id="categoria" required>
+        <option value="" disabled selected hidden>
+          Seleziona una categoria
+        </option>
+        <option value="Frutta">Frutta</option>
+        <option value="Verdura">Verdura</option>
+        <option value="Pasta">Pasta</option>
+      </select>
 
-    <button onclick="addItem()">Aggiungi</button>
-    <ul id="shoppingList"></ul>
+      <button onclick="addItem()">Aggiungi</button>
+      <ul id="shoppingList"></ul>
+    </div>
 
     <script src="../script/listadellaspesa.js"></script>
   </body>
