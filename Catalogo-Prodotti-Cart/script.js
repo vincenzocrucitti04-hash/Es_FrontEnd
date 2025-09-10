@@ -49,3 +49,20 @@ function updateTotal() {
   const total = cart.reduce((sum, item) => sum + item.price, 0);
   document.getElementById("total-amount").textContent = `€${total}`;
 }
+
+// Funzione per il checkout con controllo carrello vuoto
+function checkout() {
+  // STEP 1: Controlla se il carrello è vuoto
+  if (cart.length === 0) {
+    // Se vuoto, mostra alert di errore
+    alert("Il carrello è vuoto! Aggiungi qualche prodotto prima di procedere.");
+    return; // Ferma la funzione qui
+  }
+
+  // STEP 2: Se il carrello ha prodotti, procedi
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  alert(`Grazie per l'acquisto! Totale: €${total}`);
+
+  // Opzionale: svuota il carrello dopo l'acquisto
+  clearCart();
+}
