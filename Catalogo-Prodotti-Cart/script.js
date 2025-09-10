@@ -5,8 +5,40 @@ const productCatalog = [
   { id: 3, name: "Smartphone", price: 25 },
 ];
 
-// Array per il carrello
 let cart = [];
+
+// FUNZIONE PER CREARE I PRODOTTI DINAMICAMENTE
+function createProductCatalog() {
+  const container = document.getElementById("products-container");
+
+  // Svuota il container (nel caso ci fosse già qualcosa)
+  container.innerHTML = "";
+
+  // Crea ogni prodotto dall'array
+  productCatalog.forEach((product) => {
+    // Crea il div principale del prodotto
+    const productDiv = document.createElement("div");
+    productDiv.className = `product${product.id}`; // Classe: product1, product2, etc.
+    productDiv.setAttribute("data-id", product.id); // Attributo data-id
+
+    // Crea il contenuto HTML del prodotto
+    productDiv.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>Prezzo: €${product.price}</p>
+            <button class="quantita${product.id}" onclick="addItem(${product.id})">
+                Aggiungi al carrello
+            </button>
+        `;
+
+    // Aggiungi il prodotto al container
+    container.appendChild(productDiv);
+  });
+}
+
+// Quando il DOM è pronto, chiama showCatalog()
+document.addEventListener("DOMContentLoaded", function () {
+  createProductCatalog();
+});
 
 // Funzione per aggiungere al carrello
 function addItem(productId) {
