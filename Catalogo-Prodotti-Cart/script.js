@@ -35,7 +35,7 @@ function createProductCatalog() {
   });
 }
 
-// Quando il DOM è pronto, chiama showCatalog()
+// Quando il DOM è pronto, chiama createProductCatalog()
 document.addEventListener("DOMContentLoaded", function () {
   createProductCatalog();
 });
@@ -65,14 +65,14 @@ function updateCart() {
 
 // Funzione per svuotare il carrello
 function clearCart() {
-  // STEP 1: Svuota l'array del carrello
+  // Svuota l'array del carrello
   cart = [];
 
-  // STEP 2: Aggiorna la visualizzazione del carrello
+  // Aggiorna la visualizzazione del carrello
   const cartDiv = document.getElementById("cart-items");
   cartDiv.innerHTML = "<p>Il carrello è vuoto</p>";
 
-  // STEP 3: Resetta il totale a €0
+  // Resetta il totale a €0
   document.getElementById("total-amount").textContent = "€0";
 }
 
@@ -84,7 +84,7 @@ function updateTotal() {
 
 // Funzione per il checkout con controllo carrello vuoto
 function checkout() {
-  // STEP 1: Controlla se il carrello è vuoto
+  // Controlla se il carrello è vuoto
   if (cart.length === 0) {
     // Se vuoto, mostra alert di errore
     alert("Il carrello è vuoto! Aggiungi qualche prodotto prima di procedere.");
