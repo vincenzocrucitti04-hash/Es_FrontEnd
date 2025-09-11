@@ -74,11 +74,16 @@ btn.addEventListener("click", () => {
   });
   out.appendChild(ul);
 
-  //Destructuring
+  // Destructuring
 
-  const { nome, voto, presente } = studenti[0];
-  function presentaStudente() {
-    return `Ciao sono ${nome}, ho preso ${voto} e sono ${presente}`;
+  const [...tuttiStudenti] = tutti;
+  function presentaStudenti() {
+    return tuttiStudenti.map(
+      ({ nome, voto, presente }) =>
+        `Ciao sono ${nome}, ho preso ${voto} e sono ${
+          presente ? "presente" : "assente"
+        }`
+    );
   }
-  log("Es n 7 Presentazione Studente", presentaStudente());
+  log("Es n 7 Presentazione Studenti", presentaStudenti());
 });
