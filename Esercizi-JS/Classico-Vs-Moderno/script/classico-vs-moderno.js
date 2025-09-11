@@ -38,11 +38,11 @@ btn.addEventListener("click", () => {
 
   //Spread
 
-  const alunniN = [
+  const alunniNuovi = [
     { nome: "Vincenzo Crucitti", voto: 8, presente: true },
     { nome: "Arianna De Lucia", voto: 5, presente: false },
   ];
-  const tutti = [...studenti, ...alunniN];
+  const tutti = [...studenti, ...alunniNuovi];
   log("Es n 2", tutti);
 
   //Rest
@@ -57,4 +57,28 @@ btn.addEventListener("click", () => {
 
   const arrayTrasformato = tutti.map((el) => `${el.nome}: ${el.voto}`);
   log("Es n 4 Map", arrayTrasformato);
+
+  //Filter()
+
+  const arrayPresenti = tutti.filter((el) => el.presente);
+  log("Filtro Alunni Presenti", arrayPresenti);
+
+  //forEach()
+
+  const ul = document.createElement("ul");
+  tutti.forEach((presenza) => {
+    const li = document.createElement("li");
+    const simbolo = presenza.presente ? "✔️" : "❌";
+    li.textContent = `${presenza.nome} - ${simbolo}`;
+    ul.appendChild(li);
+  });
+  out.appendChild(ul);
+
+  //Destructuring
+
+  const { nome, voto, presente } = studenti[0];
+  function presentaStudente() {
+    return `Ciao sono ${nome}, ho preso ${voto} e sono ${presente}`;
+  }
+  log("Es n 7 Presentazione Studente", presentaStudente());
 });
