@@ -69,3 +69,39 @@ async function loadMovies() {
     container.appendChild(div);
   });
 }
+
+// --- Ricerca ---
+function searchMovies() {
+  currentQuery = document.getElementById("searchInput").value;
+  currentPage = 1;
+  loadMovies();
+}
+
+// --- Filtro per genere ---
+function filterByGenre() {
+  currentGenre = document.getElementById("genreSelect").value;
+  currentQuery = "";
+  currentPage = 1;
+  loadMovies();
+}
+
+// --- Paginazione ---
+function nextPage() {
+  if (currentPage < totalPages) {
+    currentPage++;
+    loadMovies();
+  }
+}
+
+function prevPage() {
+  if (currentPage > 1) {
+    currentPage--;
+    loadMovies();
+  }
+}
+
+// Inizializza pagina
+document.addEventListener("DOMContentLoaded", () => {
+  loadGenres();
+  loadMovies();
+});
