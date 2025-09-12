@@ -10,22 +10,24 @@
     <h1>🎬 Movie Database</h1>
 
     <!-- Ricerca -->
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Cerca un film per titolo..."
-    />
-    <button onclick="searchMovies()">Cerca</button>
-
-    <!-- Filtro per genere -->
-    <select id="genreSelect" onchange="filterByGenre()">
-      <option value="">Tutti i generi</option>
-    </select>
+    <div class="search-controls">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Cerca un film per titolo..."
+      />
+      <button onclick="searchMovies()">Cerca</button>
+      <select id="genreSelect" onchange="filterByGenre()">
+        <option value="">Tutti i generi</option>
+      </select>
+    </div>
 
     <!-- Paginazione -->
-    <button onclick="prevPage()">⬅️ Precedente</button>
-    <span id="pageInfo"></span>
-    <button onclick="nextPage()">➡️ Successiva</button>
+    <div class="pagination-controls">
+      <button onclick="prevPage()">⬅️ Precedente</button>
+      <span id="pageInfo"></span>
+      <button onclick="nextPage()">➡️ Successiva</button>
+    </div>
 
     <!-- Lista film -->
     <div id="movies"></div>
