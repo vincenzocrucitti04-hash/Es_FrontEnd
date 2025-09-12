@@ -19,3 +19,15 @@ async function fetchAPI(endpoint) {
   if (!res.ok) throw new Error("Errore API");
   return await res.json();
 }
+
+// --- Carica generi e popola select ---
+async function loadGenres() {
+  const data = await fetchAPI("/genre/movie/list?language=it");
+  const select = document.getElementById("genreSelect");
+  data.genres.forEach((g) => {
+    const opt = document.createElement("option");
+    opt.value = g.id;
+    opt.textContent = g.name;
+    select.appendChild(opt);
+  });
+}
