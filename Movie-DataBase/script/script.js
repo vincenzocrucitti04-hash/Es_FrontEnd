@@ -31,3 +31,41 @@ async function loadGenres() {
     select.appendChild(opt);
   });
 }
+
+// --- Mostra film ---
+async function loadMovies() {
+  let endpoint = "";
+  if (currentQuery) {
+    endpoint = `/search/movie?query=${encodeURIComponent(
+      currentQuery
+    )}&page=${currentPage}&language=it`;
+  } else if (currentGenre) {
+    endpoint = `/discover/movie?with_genres=${currentGenre}&page=${currentPage}&language=it`;
+  } else {
+    endpoint = `/discover/movie?page=${currentPage}&language=it`;
+  }
+
+  const data = await fetchAPI(endpoint);
+
+  totalPages = data.total_pages;
+  document.getElementById(
+    "pageInfo"
+  ).textContent = `${currentPage} / ${totalPages}`;
+
+  const container = document.getElementById("movies");
+  container.innerHTML = "";
+
+  data.results.forEach((movie) => {
+    const div = document.createElement("div");
+    div.style.margin = "10px";
+    div.innerHTML = `
+          <h3>${movie.title}</h3>
+          <img src="${
+            movie.poster_path ? IMG_BASE + movie.poster_path : ""
+          }" alt="${movie.title}">
+          <p>Data uscita: ${movie.release_date || "N/A"}</p>
+          <p>Voto: ${movie.vote_average}</p>
+        `;
+    container.appendChild(div);
+  });
+}
