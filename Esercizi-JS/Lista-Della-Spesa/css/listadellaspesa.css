@@ -1,100 +1,248 @@
-/* Reset e font base */
-body {
-  display: flex;
-  font-family: Arial, sans-serif;
+/* Reset e impostazioni base */
+* {
   margin: 0;
-  padding: 20px;
-  background-color: #f8f9fa;
-  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Titolo principale */
-h2 {
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f5f7fa;
   color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Container principale */
+div {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Titolo */
+h2 {
   text-align: center;
-  margin-bottom: 30px;
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #e8f4f8;
+  padding-bottom: 1rem;
 }
 
-/* Contenitore per i campi di input */
-input,
-select,
-button {
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
+/* Form container */
+.form-container {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* Input di testo */
+/* Input fields */
 input[type="text"] {
-  width: 180px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fafbfc;
+  transition: all 0.2s ease;
 }
 
-/* Select */
+input[type="text"]:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+input[type="text"]::placeholder {
+  color: #95a5a6;
+}
+
+/* Select dropdown */
 select {
-  width: 200px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fafbfc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 /* Pulsante aggiungi */
 button {
-  background-color: #007bff;
-  color: white;
+  padding: 14px 24px;
   border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  padding: 10px 20px;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-button:hover {
-  background-color: #0056b3;
+/* Pulsante principale */
+div > button {
+  background-color: #27ae60;
+  color: white;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+div > button:hover {
+  background-color: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+div > button:active {
+  transform: translateY(0);
 }
 
 /* Lista */
-ul {
+#shoppingList {
   list-style: none;
-  padding: 0;
-  max-width: 600px;
-  margin: 20px auto;
+  margin-top: 2rem;
 }
 
-/* Elementi della lista */
-li {
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  padding: 15px;
-  margin: 10px 0;
+#shoppingList li {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+#shoppingList li:hover {
+  background-color: #e8f4f8;
+  transform: translateX(5px);
 }
 
 /* Checkbox */
 input[type="checkbox"] {
-  margin: 0;
-  padding: 0;
-  width: auto;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #27ae60;
 }
 
-/* Testo dell'elemento */
-li span {
-  flex-grow: 1;
+/* Testo dell'item */
+#shoppingList li span {
+  flex: 1;
+  font-size: 16px;
+}
+
+#shoppingList li span strong {
+  color: #2c3e50;
+  font-weight: 600;
 }
 
 /* ID piccolo */
-li small {
-  color: #666;
-  font-size: 11px;
+#shoppingList li small {
+  font-size: 12px;
+  color: #95a5a6;
+  font-family: monospace;
 }
 
 /* Pulsante rimuovi */
-li button {
-  background-color: #dc3545;
-  padding: 6px 12px;
-  font-size: 12px;
-  margin: 0;
+#shoppingList li button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  margin-left: auto;
 }
 
-li button:hover {
-  background-color: #c82333;
+#shoppingList li button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Stile per item completati */
+li span[style*="line-through"] {
+  opacity: 0.6 !important;
+  text-decoration: line-through !important;
+}
+
+/* Item completato - styling del container */
+#shoppingList li:has(input[type="checkbox"]:checked) {
+  background-color: #d5ead7;
+  border-color: #27ae60;
+}
+
+/* Lista vuota */
+#shoppingList:empty::after {
+  content: "Nessun prodotto nella lista";
+  display: block;
+  text-align: center;
+  color: #95a5a6;
+  font-style: italic;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #dee2e6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  div {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  input[type="text"],
+  select {
+    font-size: 16px; /* Previene zoom su iOS */
+  }
+
+  #shoppingList li {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  #shoppingList li span {
+    order: 1;
+  }
+
+  #shoppingList li small {
+    order: 2;
+    text-align: center;
+  }
+
+  #shoppingList li button {
+    order: 3;
+    margin-left: 0;
+  }
+
+  input[type="checkbox"] {
+    align-self: flex-start;
+  }
 }
